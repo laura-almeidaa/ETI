@@ -1,0 +1,175 @@
+:root{
+  --paper:#FBF9F3;
+  --paper-line:#D9E1F7;
+  --ink:#171B2E;
+  --ink-soft:#3F4560;
+  --blue:#2A4CE0;
+  --blue-deep:#17309B;
+  --violet:#7C3AED;
+  --blue-soft:#E7ECFD;
+  --white:#FFFFFF;
+  --line:#D7DCEC;
+  --radius:12px;
+  --shadow:0 4px 16px rgba(23,27,46,.08);
+
+  /* reaproveita as variaveis de tema do proprio Bootstrap 5.3 */
+  --bs-primary: var(--blue);
+  --bs-primary-rgb: 42,76,224;
+  --bs-link-color: var(--blue-deep);
+  --bs-link-hover-color: var(--blue);
+  --bs-link-color-rgb: 23,48,155;
+  --bs-body-color: var(--ink);
+  --bs-body-bg: var(--paper);
+  --bs-border-color: var(--line);
+}
+
+body{
+  font-family:'Inter', sans-serif;
+  color:var(--ink);
+  background-color:var(--paper);
+  background-image:repeating-linear-gradient(var(--paper) 0 30px, var(--paper-line) 30px 31px);
+}
+
+h1,h2,h3{ font-weight:800; color:var(--ink); }
+
+p{ color:var(--ink-soft); }
+
+a{ text-decoration-thickness:1.5px; text-underline-offset:2px; }
+
+/* rotulo pequeno acima dos titulos */
+.comentariozinho{
+  display:block;
+  color:var(--blue-deep);
+  font-weight:700;
+  font-family: "Edu NSW ACT Cursive", cursive;
+  font-size:1.5rem;
+  letter-spacing:.03em;
+  margin-bottom:8px;
+}
+
+/* acessibilidade */
+.skip-link{
+  position:absolute; 
+  left:-999px; top:0; 
+  background:var(--ink); 
+  color:var(--white);
+  padding:10px 16px; 
+  z-index:2000; 
+  border-radius:0 0 8px 0; 
+  text-decoration:none; 
+  font-weight:700;
+}
+
+.skip-link:focus{ 
+  left:0; 
+}
+
+:focus-visible{ 
+  outline:3px solid var(--blue); 
+  outline-offset:2px; 
+}
+
+
+.section{ 
+  padding:56px 0; 
+}
+
+.section-alt{ 
+  background:var(--blue-soft); 
+}
+
+
+/* faixa de fundo suave sob a secao "papel", sem borda dura */
+blockquote{
+  border-left:4px solid var(--violet);
+  padding:10px 22px;
+  font-style:italic;
+  background:var(--white);
+  border-radius:0 var(--radius) var(--radius) 0;
+  box-shadow:var(--shadow);
+}
+
+/* ---------- Navbar (Bootstrap component, so recolorido) ---------- */
+.site-header{
+  background:rgba(251,249,243,.94);
+  backdrop-filter:blur(4px);
+  border-bottom:1px solid var(--line);
+  weigth: 100px;
+}
+.navbar-brand{
+  font-family:'Inter', sans-serif;
+  font-weight:800;
+  color:var(--ink) !important;
+  font-size:1.1rem;
+}
+.site-header .nav-link{
+  color:var(--ink-soft);
+  font-weight:600;
+  border-bottom:2px solid transparent;
+  padding-bottom:2px;
+}
+.site-header .nav-link:hover,
+.site-header .nav-link.active{
+  color:var(--blue-deep);
+  border-color:var(--blue);
+}
+
+/* ---------- Botoes (usando as variaveis do proprio Bootstrap) ---------- */
+.btn-primary{
+  --bs-btn-bg:var(--blue);
+  --bs-btn-border-color:var(--blue-deep);
+  --bs-btn-hover-bg:var(--blue-deep);
+  --bs-btn-hover-border-color:var(--blue-deep);
+  --bs-btn-active-bg:var(--blue-deep);
+  --bs-btn-active-border-color:var(--blue-deep);
+  --bs-btn-focus-shadow-rgb:42,76,224;
+  font-weight:700;
+}
+.btn-outline-dark{ font-weight:700; }
+
+/* ---------- Cards ---------- */
+.card{
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+}
+.card .icon{
+  width:44px; height:44px; border-radius:9px; background:var(--blue-soft);
+  display:flex; align-items:center; justify-content:center; margin-bottom:12px;
+}
+.card .icon svg{ width:22px; height:22px; stroke:var(--blue-deep); }
+
+/* ---------- Hero ---------- */
+.hero{ padding:99px 0; }
+
+.hero-icon img{ max-width:390px; width:100%; }
+
+/* ---------- Faixa de destaque (CTA) ---------- */
+.cta-band{
+  background:var(--blue-deep); color:var(--white); border-radius:var(--radius); padding:36px 30px;
+}
+.cta-band h2{ color:var(--white); }
+.cta-band p{ color:rgba(255,255,255,.92); margin-bottom:0; }
+.cta-band .btn-light{ font-weight:700; }
+
+/* ---------- Formulario ---------- */
+.form-control:focus{
+  border-color:var(--blue);
+  box-shadow:0 0 0 .2rem rgba(42,76,224,.25);
+}
+.form-success{
+  display:none; background:var(--blue-soft); color:var(--blue-deep);
+  padding:12px 16px; border-radius:8px; margin-top:14px; font-weight:600;
+}
+
+/* ---------- Rodape ---------- */
+main{ min-height:1px; }
+.site-footer{
+  background:var(--blue-deep);
+  color:var(--blue-soft);
+}
+.site-footer h2{ font-family:'Inter',sans-serif; font-weight:700; font-size:1rem; color:var(--white); }
+.site-footer p{color: var(--white)}
+.site-footer a{ color:var(--blue-soft); }
+.site-footer a:hover{ color:var(--white); }
+.site-footer hr{ border-color:rgb(255, 255, 255); }
