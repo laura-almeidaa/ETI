@@ -28,6 +28,9 @@ body{
   color:var(--ink);
   background-color:var(--paper);
   background-image:repeating-linear-gradient(var(--paper) 0 30px, var(--paper-line) 30px 31px);
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
 }
 
 h1,h2,h3{ font-weight:800; color:var(--ink); }
@@ -49,35 +52,14 @@ a{ text-decoration-thickness:1.5px; text-underline-offset:2px; }
 
 /* acessibilidade */
 .skip-link{
-  position:absolute; 
-  left:-999px; top:0; 
-  background:var(--ink); 
-  color:var(--white);
-  padding:10px 16px; 
-  z-index:2000; 
-  border-radius:0 0 8px 0; 
-  text-decoration:none; 
-  font-weight:700;
+  position:absolute; left:-999px; top:0; background:var(--ink); color:var(--white);
+  padding:10px 16px; z-index:2000; border-radius:0 0 8px 0; text-decoration:none; font-weight:700;
 }
+.skip-link:focus{ left:0; }
+:focus-visible{ outline:3px solid var(--blue); outline-offset:2px; }
 
-.skip-link:focus{ 
-  left:0; 
-}
-
-:focus-visible{ 
-  outline:3px solid var(--blue); 
-  outline-offset:2px; 
-}
-
-
-.section{ 
-  padding:56px 0; 
-}
-
-.section-alt{ 
-  background:var(--blue-soft); 
-}
-
+.section{ padding:56px 0; }
+.section-alt{ background:var(--blue-soft); }
 
 /* faixa de fundo suave sob a secao "papel", sem borda dura */
 blockquote{
@@ -94,7 +76,10 @@ blockquote{
   background:rgba(251,249,243,.94);
   backdrop-filter:blur(4px);
   border-bottom:1px solid var(--line);
-  weigth: 100px;
+}
+.site-header .navbar{
+  padding-top:1.1rem;
+  padding-bottom:1.1rem;
 }
 .navbar-brand{
   font-family:'Inter', sans-serif;
@@ -163,7 +148,7 @@ blockquote{
 }
 
 /* ---------- Rodape ---------- */
-main{ min-height:1px; }
+main{ flex:1 0 auto; }
 .site-footer{
   background:var(--blue-deep);
   color:var(--blue-soft);
